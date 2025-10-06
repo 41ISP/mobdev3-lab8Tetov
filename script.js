@@ -9,6 +9,7 @@ async function fetchData() {
     for (let i = 0; i < skebob.length; i++) {
         const tracks = document.createElement("li");
         tracks.classList.add("track-item");
+
         const song = skebob[i].track
         const ListArt = song.artists
 
@@ -19,8 +20,9 @@ async function fetchData() {
         const mainSong = document.createElement("div")
         mainSong.classList.add("track-main")
         const infoSong = document.createElement("div")
-        infoSong.classList.add("track-info")
+infoSong.classList.add("track-info")
         const nameSongs = document.createElement("div")
+
         nameSongs.classList.add("track-name")
         nameSongs.textContent = song.name
 
@@ -38,6 +40,7 @@ async function fetchData() {
 
         const durationSongs = document.createElement("div")
         durationSongs.classList.add("track-meta");
+        
         const timeSong = document.createElement("div")
         timeSong.classList.add("duration")
         const time = song.duration_ms
@@ -60,6 +63,8 @@ async function fetchData() {
         songsContaner.appendChild(tracks)
         runtime += time;
     }
+    
+    
     console.log(runtime)
     const durSongs = document.createElement("h5")
     durSongs.classList.add("total-duration")
@@ -68,4 +73,6 @@ async function fetchData() {
     durSongs.textContent = "Треков: " + skebob.length +" Общая длительность: " + hours + " ч " + minutes + " мин "
     statesContaner.appendChild(durSongs)
 }
+
+
 fetchData()
